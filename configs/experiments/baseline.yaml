@@ -1,6 +1,6 @@
-# HPC batch 1: every in-scope model x the default sample set, direct + VLM-R3 crop loop.
-models: [qwen3-vl-2b, qwen3-vl-4b, qwen3-vl-8b, qwen3-vl-8b-thinking, qwen3-vl-32b, qwen3-vl-30b-a3b,
-         qwen3.5-0.8b, qwen3.5-2b, qwen3.5-4b, qwen3.5-9b, qwen3.5-27b, qwen3.5-35b-a3b, qwen3.8-27b]
+# Everything in batch 1 (= baseline_small + baseline_large). Prefer submitting the two halves separately.
+models: [qwen3-vl-2b, qwen3.5-0.8b, qwen3.5-2b,
+         qwen3-vl-8b, qwen3-vl-8b-thinking, qwen3-vl-30b-a3b, qwen3.5-9b, qwen3.5-35b-a3b, qwen3.8-27b]
 sample_set: default
 modes: [direct, r3]
 policy: standard

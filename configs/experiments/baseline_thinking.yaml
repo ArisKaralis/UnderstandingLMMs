@@ -1,0 +1,7 @@
+# Thinking mode of the hybrid models (same weights as their instruct runs, enable_thinking=True).
+models: [qwen3.5-9b, qwen3.8-27b]
+sample_set: default
+modes: [direct]
+policy: lite
+interventions:
+  - {name: thinking, enabled: true, max_new_tokens: 4096}

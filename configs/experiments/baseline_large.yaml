@@ -1,5 +1,8 @@
-# HPC batch 1b — 8B-35B models (one 80 GB GPU). Lite policy keeps bundles small (~20-60 MB).
-models: [qwen3-vl-8b, qwen3-vl-8b-thinking, qwen3-vl-32b, qwen3-vl-30b-a3b, qwen3.5-9b, qwen3.5-27b, qwen3.5-35b-a3b, qwen3.8-27b]
+# HPC batch 1b — one instruct (<10B), one thinking (<10B) and the smallest MoE per generation (80 GB GPU).
+#   Qwen3-VL: 8B-Instruct, 8B-Thinking (separate checkpoints), 30B-A3B MoE
+#   Qwen3.5 : 9B (thinking off here; thinking on in baseline_thinking.yaml), 35B-A3B MoE
+#   Qwen3.8 : 27B (the only open <=100B VLM; no small size, no MoE <=100B)
+models: [qwen3-vl-8b, qwen3-vl-8b-thinking, qwen3-vl-30b-a3b, qwen3.5-9b, qwen3.5-35b-a3b, qwen3.8-27b]
 sample_set: default
 modes: [direct, r3]
 policy: lite

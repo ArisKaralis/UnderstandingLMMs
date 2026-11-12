@@ -1,6 +1,7 @@
 # Sourced by every .slurm job (not a job itself).
 set -euo pipefail
 [[ -f scripts/hpc/cluster.env ]] && source scripts/hpc/cluster.env
+unset PYTHONPATH
 export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
 export HF_HUB_OFFLINE=1
 export PYTHONUNBUFFERED=1
