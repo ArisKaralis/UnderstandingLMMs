@@ -4,6 +4,8 @@ set -euo pipefail
 [[ -f scripts/hpc/cluster.env ]] && source scripts/hpc/cluster.env
 python3 -c 'import sys; assert sys.version_info >= (3, 11), sys.version' 2>/dev/null || {
   echo "python3 is $(python3 --version 2>&1); 3.11+ needed. Add a 'module load' line to scripts/hpc/cluster.env."; exit 1; }
+python3 -c 'import bz2, lzma, sqlite3, ssl' 2>/dev/null || {
+  echo "$(command -v python3) lacks bz2/lzma/sqlite3/ssl (torchvision needs bz2). Load another Python module in cluster.env (3.12.4 works on Iridis)."; exit 1; }
 unset PYTHONPATH   # module-provided PYTHONPATH would shadow the venv's own pip
 # torch + CUDA wheels are ~6 GB: build the venv on scratch (VENV_DIR) and link it as .venv, so home quota is not hit.
 VENV_DIR="${VENV_DIR:-/scratch/$USER/venvs/understanding_lmms}"
