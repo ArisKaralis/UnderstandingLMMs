@@ -1,0 +1,23 @@
+# Samples traced for every model. Identical across models so the dashboard can compare them.
+# kinds:
+#   vlir_sft : row of $VLIR_ROOT/sft/vlir_sft_12k.json, looked up by sample_id
+#   bench    : row of MLLM_Testing/data/r3eval/<bench>.jsonl (falls back to the judged outputs), by id
+default:
+  - {id: vlir-152, kind: vlir_sft, sample_id: 152, note: "DocVQA table lookup (curated example)"}
+  - {id: vlir-199, kind: vlir_sft, sample_id: 199, note: "VSR spatial relation (curated example)"}
+  - {id: vlir-185, kind: vlir_sft, sample_id: 185, note: "InfographicVQA (curated example)"}
+  - {id: vlir-7737, kind: vlir_sft, sample_id: 7737, note: "GQA, dev split"}
+  - {id: vlir-8072, kind: vlir_sft, sample_id: 8072, note: "GQA, dev split"}
+  - {id: vlir-7483, kind: vlir_sft, sample_id: 7483, note: "TextVQA, dev split, 2 gold crops"}
+  - {id: vlir-7484, kind: vlir_sft, sample_id: 7484, note: "TextVQA, dev split"}
+  - {id: vstar-1, kind: bench, bench: vstar, bench_id: "1", note: "V* attribute, 1 crop in Qwen3-VL-8B r3"}
+  - {id: vstar-12, kind: bench, bench: vstar, bench_id: "12", note: "V* attribute, 2 crops in Qwen3-VL-8B r3"}
+  - {id: mmvp-35, kind: bench, bench: mmvp, bench_id: "35", note: "MMVP pair 17 (a), wrong for Qwen3-VL-8B r3"}
+  - {id: mmvp-36, kind: bench, bench: mmvp, bench_id: "36", note: "MMVP pair 17 (b)"}
+  - {id: steer-4668, kind: bench, bench: vlir_steer_test, bench_id: "4668", note: "CoT-steering test, edited group"}
+  - {id: steer-5208, kind: bench, bench: vlir_steer_test, bench_id: "5208", note: "CoT-steering test, unedited group"}
+
+# Small set for laptop development / smoke tests (images exist in the local MLLM_Testing checkout).
+smoke:
+  - {id: vlir-152, kind: vlir_sft, sample_id: 152}
+  - {id: vstar-1, kind: bench, bench: vstar, bench_id: "1"}

@@ -1,0 +1,6 @@
+{
+  "permissions": {
+    "deny": ["Bash(ssh *)", "Bash(scp *)", "Bash(sftp *)", "Bash(rsync *)",
+             "Bash(sshfs *)", "Read(~/.ssh/**)", "Edit(~/.ssh/**)"]
+  }
+}

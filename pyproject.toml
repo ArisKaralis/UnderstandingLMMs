@@ -1,0 +1,11 @@
+[project]
+name = "lmmviz"
+version = "0.1.0"
+description = "Capture and visualise the internals of Qwen-VL family models"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+include = ["lmmviz*", "backend*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,83 @@
+{
+ "id": "demo__qwen3.5-0.8b__vlir-152__direct__baseline",
+ "model": {
+  "key": "qwen3.5-0.8b",
+  "hf_id": "Qwen/Qwen3.5-0.8B",
+  "family": "qwen3_5",
+  "label": "Qwen3.5-0.8B",
+  "released": "2026-03-02",
+  "license": "apache-2.0",
+  "variant": "hybrid",
+  "tier": "A",
+  "notes": []
+ },
+ "sample": {
+  "id": "vlir-152",
+  "kind": "vlir_sft",
+  "image_path": "/Users/ak1g24/Documents/Projects/MLLM_Testing/outputs/examples/vlir/docvqa_152/image.jpg",
+  "question": "what is the date of declaration of dividend for the financial year 2008-09? \nAnswer the question using a single word or phrase.",
+  "answers": [
+   "24th july, 2009"
+  ],
+  "source": "docvqa",
+  "note": "",
+  "extra": {
+   "sample_id": 152,
+   "bbox_list": [
+    [
+     0.2763,
+     0.4811,
+     0.3694,
+     0.4933
+    ]
+   ],
+   "model_response": "<think>\nStep 1: To find the date of declaration of dividend for the financial year 2008-09, I need to locate the relevant information within the table provided in the image. The table contains details about financial years, dividend identification numbers, dates of declaration, total dividends, unclaimed dividends, and transfer dates.\n\nStep 2: I will focus on the row corresponding to the financial year 2008-09. By examining the table, I can identify the correct row and find the date of declaration of dividend.\n\nStep 3: To ensure accuracy, I will crop and zoom in on the region of the table that contains the information for the financial year 2008-09.\n{\"bbox_2d\": [294, 714, 393, 732]}\n\nStep 4: After cropping, I can clearly see that the date of declaration of dividend for the financial year 2008-09 is \"24th July, 2009\".\n</think>\n<answer>24th july, 2009</answer>"
+  }
+ },
+ "mode": "direct",
+ "intervention": {
+  "name": "baseline",
+  "description": "Unmodified model."
+ },
+ "intervention_id": "baseline",
+ "policy": {
+  "name": "full",
+  "full_tensors": "all",
+  "vision_attn_layers": "all",
+  "text_attn_layers": "all",
+  "gdn_state": true,
+  "logit_lens": true,
+  "pca": true,
+  "hist_bins": 32,
+  "max_attn_tokens": 4096,
+  "extra": {}
+ },
+ "template_kwargs": {
+  "enable_thinking": false
+ },
+ "prompt_text": "<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>what is the date of declaration of dividend for the financial year 2008-09? \nAnswer the question using a single word or phrase.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+ "full_text": "<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>what is the date of declaration of dividend for the financial year 2008-09? \nAnswer the question using a single word or phrase.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+ "T": 87,
+ "n_vision_tokens": 40,
+ "timing": {
+  "trace_forward_s": 0.08840703964233398,
+  "load_s": 0.0,
+  "generate_s": 0.0
+ },
+ "env": {
+  "torch": "2.14.0",
+  "transformers": "5.17.0",
+  "device": "cpu",
+  "gpu": "arm",
+  "python": "3.12.13"
+ },
+ "git": {
+  "lmmviz": null,
+  "mllm_testing": "f1a21be7b97aa9162645c7dad5774208fe0b0488"
+ },
+ "created": "2026-11-12T13:13:05",
+ "demo": true,
+ "bundle_version": 1,
+ "bytes": 2506573,
+ "complete": true
+}

@@ -1,0 +1,10 @@
+# Laptop dashboard backend (no GPU needed for static bundles)
+fastapi
+uvicorn
+numpy
+safetensors
+pyarrow
+pandas
+pyyaml
+pytest
+httpx

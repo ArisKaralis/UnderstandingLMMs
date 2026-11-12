@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: lmmviz
+Version: 0.1.0
+Summary: Capture and visualise the internals of Qwen-VL family models
+Requires-Python: >=3.11

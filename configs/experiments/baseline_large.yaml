@@ -1,0 +1,6 @@
+# HPC batch 1b — 8B-35B models (one 80 GB GPU). Lite policy keeps bundles small (~20-60 MB).
+models: [qwen3-vl-8b, qwen3-vl-8b-thinking, qwen3-vl-32b, qwen3-vl-30b-a3b, qwen3.5-9b, qwen3.5-27b, qwen3.5-35b-a3b, qwen3.8-27b]
+sample_set: default
+modes: [direct, r3]
+policy: lite
+max_new_tokens: 1024

@@ -1,0 +1,15 @@
+# Small grid that runs on a laptop (MPS) in a few minutes; used for the static demo.
+models: [qwen3.5-0.8b, qwen3-vl-2b]
+samples: [vlir-152]
+modes: [direct]
+policy: standard
+max_new_tokens: 64
+interventions:
+  - null
+  - {name: blank_image}
+  - {name: resolution, max_pixels: 100352}
+  - {name: gdn_no_forget, layers: [0, 1, 2, 4, 5, 6]}
+  - {name: attn_gate_off}
+  - {name: deepstack_off}
+  - {name: head_ablate, layer: 3, heads: [0, 1, 2, 3]}
+  - {name: flat_positions}

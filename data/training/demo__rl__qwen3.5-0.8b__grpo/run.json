@@ -1,0 +1,42 @@
+{
+ "kind": "rl",
+ "model": "qwen3.5-0.8b",
+ "algo": "grpo",
+ "algo_config": {
+  "algo": "grpo",
+  "eps_low": 0.2,
+  "eps_high": 0.2,
+  "beta_kl": 0.04,
+  "tau_pos": 1.0,
+  "tau_neg": 1.05,
+  "std_normalize": true,
+  "token_level": false
+ },
+ "config": {
+  "model": "qwen3.5-0.8b",
+  "algo": "grpo",
+  "init_adapter": "data/training/demo__sft__qwen3.5-0.8b__vlir/adapter",
+  "source": "sft",
+  "n_prompts": 6,
+  "prompts": 1,
+  "group": 4,
+  "inner": 2,
+  "steps": 4,
+  "lr": 2e-05,
+  "max_new_tokens": 160,
+  "temperature": 1.0,
+  "max_pixels": 200704,
+  "seed": 0,
+  "run_id": "demo__rl__qwen3.5-0.8b__grpo",
+  "demo": true
+ },
+ "n_prompts": 6,
+ "demo": true,
+ "reward": "correct + 0.5\u00b7IoU(box) + 0.1\u00b7format \u2212 0.1\u00b7language-mix",
+ "id": "demo__rl__qwen3.5-0.8b__grpo",
+ "created": "2026-11-12T13:04:41",
+ "git": null,
+ "mllm_testing": "f1a21be7b97aa9162645c7dad5774208fe0b0488",
+ "torch": "2.14.0",
+ "steps": 4
+}

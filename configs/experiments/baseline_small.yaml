@@ -1,0 +1,6 @@
+# HPC batch 1a — small models (fit any single GPU, >=24 GB). Standard policy.
+models: [qwen3-vl-2b, qwen3-vl-4b, qwen3.5-0.8b, qwen3.5-2b, qwen3.5-4b]
+sample_set: default
+modes: [direct, r3]
+policy: standard
+max_new_tokens: 1024

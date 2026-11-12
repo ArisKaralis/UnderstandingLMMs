@@ -1,0 +1,23 @@
+# Interventions on representative models (<=35B). Family-incompatible rows are skipped automatically.
+models: [qwen3-vl-8b, qwen3-vl-30b-a3b, qwen3.5-9b, qwen3.5-35b-a3b, qwen3.8-27b]
+samples: [vlir-152, vlir-199, vstar-1, vstar-12, mmvp-35, mmvp-36]
+modes: [direct]
+policy: lite
+max_new_tokens: 512
+interventions:
+  - null
+  - {name: blank_image}
+  - {name: blur_image, radius: 8}
+  - {name: resolution, max_pixels: 100352}
+  - {name: resolution, max_pixels: 1605632}
+  - {name: vision_ablate, mode: shuffle}
+  - {name: deepstack_off}
+  - {name: mrope_chunked}
+  - {name: flat_positions}
+  - {name: attn_gate_off}
+  - {name: gdn_no_forget, layers: [0, 1, 2]}
+  - {name: gdn_no_write, layers: [0, 1, 2]}
+  - {name: skip_layer, layers: [1]}
+  - {name: moe_topk, k: 2}
+  - {name: moe_no_shared}
+  - {name: thinking, enabled: true, max_new_tokens: 4096}

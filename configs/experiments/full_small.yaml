@@ -1,0 +1,6 @@
+# "Every single part": full-tensor capture for the small models on 3 curated samples.
+models: [qwen3-vl-2b, qwen3.5-0.8b, qwen3.5-2b]
+samples: [vlir-152, vlir-199, vstar-1]
+modes: [direct]
+policy: full
+max_new_tokens: 256
